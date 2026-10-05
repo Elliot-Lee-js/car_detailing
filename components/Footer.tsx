@@ -7,16 +7,15 @@ import Image from "next/image"
 import Link from "next/link"
 
 const productLinks = [
-  { label: "Overview", href: "/overview" },
-  { label: "Price", href: "/pricing" },
-  { label: "Features", href: "/features" },
-  { label: "Marketplace", href: "/marketplace" },
+  { label: "Interior", href: "/services/interior" },
+  { label: "Exterior", href: "/services/exterior" },
+  { label: "Ceramic Coating", href: "/services/ceramic-coating" },
+  { label: "Paint Correction", href: "/services/paint-correction" },
 ]
 
 const companyLinks = [
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
-  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ]
 
@@ -76,7 +75,7 @@ const Footer = () => {
           </div>
 
           {/* LINK COLUMNS */}
-          <FooterColumn title="Product" links={productLinks} />
+          <FooterColumn title="Services" links={productLinks} />
           <FooterColumn title="Company" links={companyLinks} />
           <FooterColumn title="Support" links={supportLinks} />
         </div>
