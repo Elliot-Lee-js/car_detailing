@@ -1,31 +1,16 @@
+
 import Hero from "@/components/Hero";
+import BookingCard from "@/components/BookingCard";
+import AboutUs from "@/components/AboutUs";
 
 export default function Home() {
   return (
     <main>
-      {/* HERO */}
-       <Hero />
-
-      <section>
-        <h2>Our Services</h2>
-        <div>
-          <h3>Interior Detailing</h3>
-          <p>...</p>
-        </div>
-        <div>
-          <h3>Ceramic Coatings</h3>
-          <p>...</p>
-        </div>
-      </section>
-
-      <section>
-        <h2>Customer Testimonials</h2>
-        <article>
-          <p>"Great service..." — Ben</p>
-        </article>
-        <article>
-          <p>"Very professional..." — Adam</p>
-        </article>
+      <Hero />
+     <AboutUs />
+      <section className="pb-20">
+        <h2 className="text-3xl font-bold tracking-tight px-3 py-1 mb-5">Our Services</h2>
+        <BookingCard />
       </section>
     </main>
   );

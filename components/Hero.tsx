@@ -1,26 +1,18 @@
-// components/Hero.tsx
+
 "use client"
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ChevronLeft, ChevronRight, ImageIcon } from "lucide-react"
-
-const clientLogos = [
-  { name: "BMW" },
-  { name: "Mercedes" },
-  { name: "Audi" },
-  { name: "Porsche" },
-  { name: "Toyota" },
-  { name: "Ford" },
-]
+import Image from "next/image"
 
 const portfolioImages = [
-  { src: "/portfolio/detail-1.jpg", alt: "Ceramic coating application" },
-  { src: "/portfolio/detail-2.jpg", alt: "Paint correction close-up" },
-  { src: "/portfolio/detail-3.jpg", alt: "Interior leather conditioning" },
-  { src: "/portfolio/detail-4.jpg", alt: "Headlight restoration" },
-  { src: "/portfolio/detail-5.jpg", alt: "Full exterior detail" },
+  { src: "/car-1.jpg", alt: "Ceramic coating application" },
+  { src: "/car-2.jpg", alt: "Paint correction close-up" },
+  { src: "/car-3.jpg", alt: "Interior leather conditioning" },
+  { src: "/car-4.jpg", alt: "Headlight restoration" },
+  { src: "/car-5.jpg", alt: "Full exterior detail" },
 ]
 
 export default function Hero() {
@@ -49,8 +41,8 @@ export default function Hero() {
             </span>
 
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Beyond Detailing.
-              <span className="block text-zinc-400">
+              Optimal Detailing.
+              <span className="block text-3xl mt-1 text-zinc-400">
                 Passion for Bespoke Automotive Services.
               </span>
             </h1>
@@ -63,18 +55,14 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-4 pt-2">
               <Button size="lg" className="bg-zinc-50 text-zinc-900 hover:bg-zinc-200">
-                Book Your Detail
+                Book Now
               </Button>
             </div>
-
-            <p className="pt-4 text-xs text-zinc-500">
-              Trusted by 200+ Sydney drivers · Fully insured · Mobile service available
-            </p>
           </div>
 
           {/* RIGHT — Carousel + Logos */}
           <div className="relative flex flex-col gap-8">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+            <div className="relative aspect-[4/5] max-h-[600px] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
               {mounted &&
                 portfolioImages.map((img, i) => {
                   const offset = i - current
@@ -95,8 +83,7 @@ export default function Hero() {
                           : `translateX(${offset * 8}%) scale(0.95)`,
                       }}
                     >
-                      {/* ===== IMAGE PLACEHOLDER =====
-                          Replace this entire <div> with:
+                        <div className="">
                           <Image
                             src={img.src}
                             alt={img.alt}
@@ -105,7 +92,8 @@ export default function Hero() {
                             priority={i === 0}
                             sizes="(max-width: 1024px) 100vw, 50vw"
                           />
-                      */}
+                        </div>
+                     
                       <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-800 to-zinc-900 text-zinc-500">
                         <ImageIcon className="size-12" strokeWidth={1.5} />
                         <span className="text-sm font-medium text-zinc-400">
@@ -154,34 +142,6 @@ export default function Hero() {
                   />
                 ))}
               </div>
-            </div>
-
-            {/* Logo marquee — also placeholder */}
-            <div className="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 py-4">
-              <div className="flex animate-marquee gap-12 whitespace-nowrap">
-                {[...clientLogos, ...clientLogos].map((logo, i) => (
-                  <div
-                    key={i}
-                    className="flex h-8 w-24 shrink-0 items-center justify-center rounded border border-dashed border-zinc-700 opacity-60"
-                  >
-                    {/* ===== LOGO PLACEHOLDER =====
-                        Replace this span with:
-                        <Image
-                          src={`/logos/${logo.name.toLowerCase()}.svg`}
-                          alt={logo.name}
-                          width={96}
-                          height={32}
-                          className="h-6 w-auto opacity-40 grayscale"
-                        />
-                    */}
-                    <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                      {logo.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-zinc-900 to-transparent" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-zinc-900 to-transparent" />
             </div>
           </div>
         </div>
