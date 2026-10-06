@@ -2,47 +2,60 @@ import {
   InstagramLogoIcon,
   LinkedInLogoIcon,
   TwitterLogoIcon,
-} from "@radix-ui/react-icons"
-import Image from "next/image"
-import Link from "next/link"
+} from "@radix-ui/react-icons";
+import Image from "next/image";
+import Link from "next/link";
 
 const productLinks = [
   { label: "Interior", href: "/services/interior" },
   { label: "Exterior", href: "/services/exterior" },
   { label: "Ceramic Coating", href: "/services/ceramic-coating" },
   { label: "Paint Correction", href: "/services/paint-correction" },
-]
+];
 
 const companyLinks = [
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
   { label: "Contact", href: "/contact" },
-]
+];
 
 const supportLinks = [
   { label: "Help Center", href: "/help" },
   { label: "Status", href: "/status" },
   { label: "Community", href: "/community" },
   { label: "Terms", href: "/terms" },
-]
+];
 
 const socialLinks = [
-  { label: "Twitter", href: "https://twitter.com/yourhandle", Icon: TwitterLogoIcon },
-  { label: "Instagram", href: "https://instagram.com/yourhandle", Icon: InstagramLogoIcon },
-  { label: "LinkedIn", href: "https://linkedin.com/company/yourhandle", Icon: LinkedInLogoIcon },
-]
+  {
+    label: "Twitter",
+    href: "https://twitter.com/yourhandle",
+    Icon: TwitterLogoIcon,
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/yourhandle",
+    Icon: InstagramLogoIcon,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/company/yourhandle",
+    Icon: LinkedInLogoIcon,
+  },
+];
 
 const Footer = () => {
   return (
     <footer className="bg-zinc-100 mt-auto">
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-4xl px-6 py-12">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:flex lg:justify-between">
           {/* BRAND */}
           <div className="flex flex-col items-start gap-2 md:items-center lg:items-start">
             <h3 className="text-lg font-bold">Optimal Group</h3>
-            <p className="text-sm text-gray-600">
-              Detail orientated service
-            </p>
+              <p className="text-sm text-gray-600 max-w-sm">
+                Perth-based automotive detailing studio. Handled with
+                passion and precision.
+              </p>
 
             <div className="mt-2 flex items-center gap-4">
               {socialLinks.map(({ label, href, Icon }) => (
@@ -64,25 +77,20 @@ const Footer = () => {
                 aria-label="TikTok"
                 className="transition-opacity hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
               >
-                <Image
-                  src="/tiktok-solid.svg"
-                  width={20}
-                  height={20}
-                  alt=""
-                />
+                <Image src="/tiktok-solid.svg" width={20} height={20} alt="" />
               </a>
             </div>
           </div>
 
-          {/* LINK COLUMNS */}
           <FooterColumn title="Services" links={productLinks} />
           <FooterColumn title="Company" links={companyLinks} />
-          <FooterColumn title="Support" links={supportLinks} />
         </div>
 
         {/* LEGAL ROW */}
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-gray-300 pt-6 text-sm text-gray-600 sm:flex-row">
-          <p>© {new Date().getFullYear()} Optimal Group. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Optimal Group. All rights reserved.
+          </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-gray-900">
               Privacy Policy
@@ -94,13 +102,13 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 type FooterColumnProps = {
-  title: string
-  links: { label: string; href: string }[]
-}
+  title: string;
+  links: { label: string; href: string }[];
+};
 
 const FooterColumn = ({ title, links }: FooterColumnProps) => {
   return (
@@ -119,7 +127,7 @@ const FooterColumn = ({ title, links }: FooterColumnProps) => {
         ))}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

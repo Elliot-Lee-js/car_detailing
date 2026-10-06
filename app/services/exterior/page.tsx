@@ -80,7 +80,7 @@ const Page = () => {
 
       <section className="bg-white py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className=" gap-12 lg:gap-16 grid grid-cols-2">
+          <div className=" gap-12 lg:gap-16 grid grid-cols-1 md:grid-cols-2">
             {services.map((service) => (
               <div
                 key={service.id}
