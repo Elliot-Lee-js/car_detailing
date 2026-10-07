@@ -67,7 +67,7 @@ export default function Navbar() {
         {/* DESKTOP CTA */}
         <div className="hidden md:block">
           <Link
-            href="/book"
+            href="/contact"
             className="inline-flex h-9 items-center rounded-full bg-zinc-900 px-4 text-sm font-medium text-white transition-colors hover:bg-zinc-800"
           >
             Book Now
@@ -102,7 +102,7 @@ export default function Navbar() {
             ))}
             <li className="mt-2">
               <Link
-                href="/book"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="block rounded-full bg-zinc-900 px-4 py-2 text-center text-sm font-medium text-white hover:bg-zinc-800"
               >
