@@ -47,7 +47,7 @@ const BookingCard = () => {
   const [hovered, setHovered] = React.useState<string | null>(null);
 
   return (
-    <div className="flex sm:grid lg:flex gap-4 px-3">
+    <div className="flex grid mdg:flex gap-4 px-3">
       {cards.map((card) => {
         const isHovered = hovered === card.id;
         const isDimmed = hovered !== null && !isHovered;
