@@ -27,17 +27,16 @@ export default function ServiceCard({ service, className }: ServiceCardProps) {
   return (
     <div
       className={cn(
-        "grid grid-cols-2 overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all hover:scale-102 duration-300 hover:shadow-lg",
+        "grid grid-cols-1 lg:grid-cols-2 overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all hover:scale-102 duration-300 hover:shadow-lg",
         className,
       )}
     >
-      <div className="relative w-full overflow-hidden bg-zinc-100">
+      <div className="relative aspect-[4/3] lg:aspect-[0] w-full overflow-hidden bg-zinc-100">
         <Image
           src={service.image}
           alt={service.title}
           fill
           className="object-cover transition-transform duration-500 hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
 
